@@ -90,33 +90,31 @@ class Movies extends React.Component {
 		const { totalCount, data: movieList } = this.getPagedData();
 
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-2">
-						<ListGroup
-							genres={this.state.genres}
-							handleGenres={this.handleGenres}
-							selectedGenre={this.state.selectedGenre}
-						/>
-					</div>
-					<div className="col">
-						<p className="p-3">There are {totalCount} movies in the Database</p>
+			<div className="row">
+				<div className="col-2">
+					<ListGroup
+						genres={this.state.genres}
+						handleGenres={this.handleGenres}
+						selectedGenre={this.state.selectedGenre}
+					/>
+				</div>
+				<div className="col">
+					<p className="p-3">There are {totalCount} movies in the Database</p>
 
-						<MoviesTable
-							movieList={movieList}
-							sortColumn={sortColumn}
-							onLike={this.handleLike}
-							onDelete={this.handleDelete}
-							onSort={this.handleSort}
-						/>
+					<MoviesTable
+						movieList={movieList}
+						sortColumn={sortColumn}
+						onLike={this.handleLike}
+						onDelete={this.handleDelete}
+						onSort={this.handleSort}
+					/>
 
-						<Pagination
-							movieCount={totalCount}
-							perPage={perPage}
-							currentPage={currentPage}
-							onPageChange={this.handlePageChange}
-						/>
-					</div>
+					<Pagination
+						movieCount={totalCount}
+						perPage={perPage}
+						currentPage={currentPage}
+						onPageChange={this.handlePageChange}
+					/>
 				</div>
 			</div>
 		);
