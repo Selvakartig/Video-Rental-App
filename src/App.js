@@ -7,6 +7,7 @@ import NavBar from "./components/navBar";
 import NotFound from "./components/notFound";
 import MovieForm from "./components/movieForm";
 import LoginForm from "./components/loginForm";
+import Register from "./components/registerForm";
 
 class App extends React.Component {
 	render() {
@@ -15,7 +16,9 @@ class App extends React.Component {
 				<NavBar />
 				<div className="container">
 					<Switch>
+						<Route path="/register" component={Register}></Route>
 						<Route path="/login" component={LoginForm}></Route>
+						<Route path="/movies/movieForm" component={MovieForm}></Route>
 						<Route path="/movies/:id" component={MovieForm}></Route>
 						<Route path="/movies" component={Movies}></Route>
 						<Route path="/customers" component={Customers}></Route>
