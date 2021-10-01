@@ -110,6 +110,8 @@ class Movies extends React.Component {
 
 		const { perPage, currentPage, sortColumn } = this.state;
 
+		const { currentUser } = this.props;
+
 		if (length === 0) {
 			return (
 				<div className="container">
@@ -130,9 +132,11 @@ class Movies extends React.Component {
 					/>
 				</div>
 				<div className="col">
-					<Link to={"/movies/new"} className="btn btn-primary">
-						New Movie
-					</Link>
+					{currentUser && (
+						<Link to={"/movies/new"} className="btn btn-primary">
+							New Movie
+						</Link>
+					)}
 					<p className="pt-3">There are {totalCount} movies in the Database</p>
 
 					<SearchBox
